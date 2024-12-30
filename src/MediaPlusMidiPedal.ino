@@ -42,7 +42,9 @@ unsigned long lastDebounceTime[SWITCH_COUNT] = {0, 0, 0, 0};     // Last time we
 bool isCurrentlyPressed[SWITCH_COUNT]= {false, false, false, false}; // Are we in a pressed state?
 unsigned long pressTime[SWITCH_COUNT]    = {0, 0, 0, 0};         // When the switch went down
 int normalKeys[SWITCH_COUNT] = {HID_KEY_4, HID_KEY_BACKSLASH, HID_KEY_PERIOD, HID_KEY_SEMICOLON};
-int longPressKeys[SWITCH_COUNT] = {HID_KEY_SLASH, HID_KEY_BACKSLASH, HID_KEY_PERIOD, HID_KEY_SEMICOLON};
+int longPressKeys[SWITCH_COUNT] = {HID_KEY_SLASH, HID_KEY_GRAVE, HID_KEY_COMMA, HID_KEY_SEMICOLON};
+
+// TODO: Find key to activate Ped7 in Ultimate Guitar
 
 void setup() 
 {
@@ -129,7 +131,6 @@ void testKeyboardNoDelay(uint8_t key, uint8_t modifier, const char* description)
   blehid.keyPress(modifier, key);
   delay(50);
   blehid.keyRelease();
-  //delay(3000);  // Longer delay to see effect
 }
 
 void loop() 
